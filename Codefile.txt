@@ -1,0 +1,6 @@
+N1 = 10
+N2 = 20
+if N1 > N2 :
+   print ( "N1 bigiest" )
+else :
+   print ( "N2 bigiest" )

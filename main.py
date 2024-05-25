@@ -1,0 +1,54 @@
+#First part in the Project .
+#Test exist file and read it & Seperate code/text to a tokens 
+
+from datetime import date
+today = date.today()
+print("Date is :", today)
+
+#*************************************************************************(1)
+import os
+
+if not os.path.exists('Codefile.txt'):
+    print("Not Found")
+else :
+    print('Its found')
+
+
+
+t_file=open("Codefile.txt")
+read = t_file.read()
+print(read)
+
+#*************************************************************************(2)
+import tokenize
+from io import BytesIO
+import token
+
+tokens = tokenize.tokenize(BytesIO(read.encode('utf-8')).readline)
+counter=0
+for t in tokens:
+        counter+=1
+        print ("\n",t.string)
+        
+print("\nNumber of the tokens are :    (",counter,")")
+#*************************************************************************(3)      
+
+#Second part in the Project . 
+#Type & Sum of the tokens .      
+
+import tokenize
+from io import BytesIO
+import token
+
+tokens = tokenize.tokenize(BytesIO(read.encode('utf-8')).readline)
+for t in tokens:
+        counter+=1
+        print ("\n",t.string,"   ", token.tok_name[t.type])
+        
+
+
+
+
+
+#Marwan Hasan 
+#Material : Compiler Design 
